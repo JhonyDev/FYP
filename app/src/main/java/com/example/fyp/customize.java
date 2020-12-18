@@ -45,23 +45,15 @@ public class customize extends AppCompatActivity implements ChoicesRVA.ChoiceInt
     ConstraintLayout touchField;
     boolean first = true;
     Bitmap merged;
-    private int resourceId;
-    //private ImageView ivPreview;
-    private RecyclerView rvChoices;
     private ChoicesRVA choicesRVA;
-    //   private SimpleDraweeView sdvChoice;
     private List<Choice> choiceList;
     private float lastXImage, lastYImage;
     private float actualXImage, actualYImage;
     private float dXImageLoc;
     private float dYImageLoc;
-    private SeekBar sbImageSize;
     private int height;
     private FrameLayout mFrameLayoutImageContainer;
     private int width;
-    private long startClickTime;
-    private float dXILoc;
-    private float dYILoc;
     private float dXHSI;
     private ImageButton mImageButtonImageHorizontalSize;
     private float lastWidthImage, lastHeightImage;
@@ -71,8 +63,6 @@ public class customize extends AppCompatActivity implements ChoicesRVA.ChoiceInt
     private ImageButton mImageButtonCommitImage;
     private ImageView mImageViewMemeViewer;
     private List<Bitmap> mListBitmapHistory;
-    private Bitmap mClearImageBitmap;
-    private int userOn;
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
         Bitmap bitmap;
@@ -177,7 +167,8 @@ public class customize extends AppCompatActivity implements ChoicesRVA.ChoiceInt
         mImageButtonImageHorizontalSize = findViewById(R.id.mImageButtonImageHorizontalSize);
 
         //sdvChoice = findViewById(R.id.sdv_choice_image);
-        rvChoices = findViewById(R.id.rv_choices);
+        //private ImageView ivPreview;
+        RecyclerView rvChoices = findViewById(R.id.rv_choices);
         //ivPreview = findViewById(R.id.iv_preview);
         rvChoices.setAdapter(choicesRVA);
         getMetrics();
@@ -193,7 +184,7 @@ public class customize extends AppCompatActivity implements ChoicesRVA.ChoiceInt
     }
 
     private void checkIntent() {
-        resourceId = getIntent().getIntExtra("resourceId", 0);
+        int resourceId = getIntent().getIntExtra("resourceId", 0);
         //ivPreview.setImageDrawable(getDrawable(resourceId));
         loadClearImage(drawableToBitmap(getDrawable(resourceId)));
 
@@ -390,7 +381,7 @@ public class customize extends AppCompatActivity implements ChoicesRVA.ChoiceInt
     }
 
     private void loadClearImage(Bitmap bitmap) {
-        mClearImageBitmap = resize(bitmap, width, height);
+        Bitmap mClearImageBitmap = resize(bitmap, width, height);
         mImageViewMemeViewer.getLayoutParams().width = mClearImageBitmap.getWidth();
         mImageViewMemeViewer.getLayoutParams().height = mClearImageBitmap.getHeight();
         mImageViewMemeViewer.requestLayout();
@@ -399,7 +390,6 @@ public class customize extends AppCompatActivity implements ChoicesRVA.ChoiceInt
         mListBitmapHistory = new ArrayList<>();
         mListBitmapHistory.add(mClearImageBitmap);
         merged = mClearImageBitmap;
-        userOn = 0;
 
     }
 

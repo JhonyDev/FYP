@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/touch_field"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#808080"
+    tools:context=".customize">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <ImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <!--    <com.facebook.drawee.view.SimpleDraweeView-->
+        <!--        android:id="@+id/sdv_choice_image"-->
+        <!--        android:layout_width="100dp"-->
+        <!--        android:layout_height="100dp"-->
+        <!--        android:layout_gravity="center"-->
+        <!--        android:layout_margin="5dp"-->
+        <!--        android:elevation="10dp"-->
+        <!--        android:padding="5dp"-->
+        <!--        android:scaleType="fitCenter"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/iv_preview"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/iv_preview"-->
+        <!--        fresco:roundedCornerRadius="10dp" />-->
+
+
+        <FrameLayout
+            android:id="@+id/mFrameLayoutPhotoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_preview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="@+id/iv_preview">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/mSimpleDraweeViewAddPhoto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/container_border"
+                android:backgroundTint="@color/colorBlue"
+                android:padding="30dp"
+                android:scaleType="fitXY"
+                fresco:placeholderImage="@drawable/ic_test_image"
+                fresco:roundedCornerRadius="10dp" />
+
+            <ImageButton
+                android:id="@+id/mImageButtonCommitImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@color/colorTransparent"
+                android:elevation="5dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_check_circle" />
+
+            <ImageButton
+                android:id="@+id/mImageButtonImageHorizontalSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:background="@color/colorTransparent"
+                android:elevation="5dp"
+                android:src="@drawable/ic_size_notch" />
+
+            <ImageButton
+                android:id="@+id/mImageButtonImageVerticalSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:background="@color/colorTransparent"
+                android:elevation="5dp"
+                android:src="@drawable/ic_size_notch" />
+
+        </FrameLayout>
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_choices"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/btn7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/btn7"
+        android:onClick="save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_print" />
+
+    <Button
+        android:id="@+id/btn_print"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:onClick="print"
+        android:text="@string/print"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn7"
+        app:layout_constraintStart_toEndOf="@id/btn_undo" />
+
+    <Button
+        android:id="@+id/btn_undo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:onClick="undo"
+        android:text="@string/undo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_print"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

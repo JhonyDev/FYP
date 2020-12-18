@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorBlue">#5600eeff</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="colorTransparent">@android:color/transparent</color>
+    <color name="colorHalfWhite">#e0b4b4b4</color>
+
+    <color name="black">@android:color/black</color>
+    <color name="red">@android:color/holo_red_dark</color>
+
+    <color xmlns:tools="http://schemas.android.com/tools"
+        name="ucrop_color_toolbar"
+        tools:override="true">
+        @color/colorPrimary
+    </color>
+    <color name="grey">#4D4D4D</color>
+    <color name="pressedColor">#B7B4B4B4</color>
+</resources>

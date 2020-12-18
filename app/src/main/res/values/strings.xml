@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">DressDesigner</string>
+    <string name="Tv1">Fashion Designing App</string>
+    <string name="Tv2">version 2.0</string>
+    <string name="Tv3"><b>DressDesigner</b></string>
+    <string name="Tv4">ChooseDesigns</string>
+    <string name="Tv5">Sketch</string>
+    <string name="Tv6">ImportDesign</string>
+
+    <string name="btn4">customize</string>
+    <string name="Tv7">Select your Design</string>
+    <string name="btn6">Confirm</string>
+    <string name="btn7">Save</string>
+    <string name="btn8">delete</string>
+    <string name="Tv8">Customize Your Design</string>
+    <string name="Tv9">Add Details</string>
+    <string name="btn9">Choose image</string>
+    <string name="image">TODO</string>
+    <string name="spinner">Details</string>
+        <string-array name="spinnerItems">
+            <item>None</item>
+            <item>Shilwar</item>
+            <item>Kameez</item>
+            <item>Trouser</item>
+            <item>Frock</item>
+        </string-array>
+    <string name="spinner2">Details</string>
+    <string name="pen_size">Pen size:</string>
+    <string name="print">Print</string>
+    <string name="undo">Undo</string>
+    <string-array name="spinner2Items">
+        <item>None</item>
+        <item>Buttons</item>
+        <item>Laces</item>
+        <item>Sleeves</item>
+
+    </string-array>
+
+</resources>
